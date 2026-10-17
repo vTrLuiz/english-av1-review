@@ -1,0 +1,65 @@
+const question = (id, skill, prompt, options, correctSentence, explanationPt, hintPt, sourceSlide) => ({
+  id,
+  skill,
+  prompt,
+  options,
+  correctIndex: 0,
+  correctSentence,
+  explanationPt,
+  hintPt,
+  sourceSlide,
+});
+
+export const SKILLS = {
+  wh: "WH questions",
+  profiles: "Perfis",
+  dialogue: "Diálogo",
+  grammar: "Gramática",
+};
+
+export const QUESTIONS = [
+  question("wh-01", "wh", "_____ is her nickname?", ["What", "Where", "When", "Why"], "What is her nickname?", "Use What para perguntar uma informação ou um nome.", "Pense em: Qual é o apelido dela?", 2),
+  question("wh-02", "wh", "_____ old is Jessie?", ["How", "What", "Where", "Who"], "How old is Jessie?", "How old pergunta a idade.", "A expressão de idade começa com How.", 2),
+  question("wh-03", "wh", "_____ is Jessie from?", ["Where", "What", "Why", "When"], "Where is Jessie from?", "Where pergunta sobre lugar ou origem.", "A resposta é Japan, um lugar.", 2),
+  question("wh-04", "wh", "_____ is her nationality?", ["What", "How", "Where", "When"], "What is her nationality?", "Use What para perguntar qual é a nacionalidade.", "A resposta esperada é Japanese.", 2),
+  question("wh-05", "wh", "_____ is she like?", ["What", "How", "Where", "Who"], "What is she like?", "What is she like? pede uma descrição da pessoa.", "A resposta fala sobre aparência ou personalidade.", 2),
+  question("wh-06", "wh", "Hi, Jessie. _____ are you?", ["How", "Why", "What", "When"], "Hi, Jessie. How are you?", "How are you? pergunta como a pessoa está.", "A resposta é: I am happy today.", 4),
+  question("wh-07", "wh", "_____ are you happy?", ["Why", "How", "Where", "Who"], "Why are you happy?", "Why pergunta o motivo. A resposta costuma começar com because.", "A próxima fala começa com Because.", 4),
+  question("wh-08", "wh", "_____ is he from?", ["Where", "What", "When", "Why"], "Where is he from?", "Where pergunta de onde alguém é.", "A resposta menciona Colombia.", 4),
+  question("wh-09", "wh", "_____ is your date?", ["When", "Where", "How", "Who"], "When is your date?", "When pergunta quando algo acontece.", "A resposta informa today, evening e 7 p.m.", 4),
+  question("wh-10", "wh", "_____ is his favorite type of food?", ["What", "When", "Where", "Why"], "What is his favorite type of food?", "What pergunta qual é a preferência.", "A resposta é Italian food.", 4),
+
+  question("profiles-01", "profiles", "Jessie is 26 years old. Which question matches this answer?", ["How old is she?", "Where is she from?", "What is she like?", "Why is she happy?"], "How old is she?", "How old corresponde a uma resposta com idade.", "Procure a pergunta sobre 26.", 2),
+  question("profiles-02", "profiles", "Jessie is from Japan. Which question matches this answer?", ["Where is she from?", "What is her nationality?", "How is she?", "When is her date?"], "Where is she from?", "Where is she from? pergunta o país de origem.", "Japan é um país.", 2),
+  question("profiles-03", "profiles", "Jessie is Japanese. Which question matches this answer?", ["What is her nationality?", "Where is she from?", "What is her nickname?", "How old is she?"], "What is her nationality?", "Japanese é nacionalidade; Japan é o país.", "Diferencie país de nacionalidade.", 2),
+  question("profiles-04", "profiles", "Her nickname is Jessie. Which question matches this answer?", ["What is her nickname?", "Who is her date?", "Where is she from?", "How is Jessie?"], "What is her nickname?", "What pergunta a informação: Jessie.", "A resposta fornece um nome.", 2),
+  question("profiles-05", "profiles", "Kyle has dark eyes, short afro-curly black hair and a beard. Which question matches?", ["What is he like?", "Where is he from?", "How old is he?", "What is his nationality?"], "What is he like?", "What is he like? pede a descrição de alguém.", "A resposta descreve a aparência.", 3),
+  question("profiles-06", "profiles", "His first name is Kyle. Choose the correct question.", ["What is his first name?", "Where is his first name?", "How old is his name?", "Why is his name?"], "What is his first name?", "Use What para perguntar o nome.", "A resposta é Kyle.", 3),
+  question("profiles-07", "profiles", "He is Colombian. Choose the correct question.", ["What is his nationality?", "Where is his nationality?", "How is his country?", "When is he Colombian?"], "What is his nationality?", "Colombian é nacionalidade.", "Colombia seria o país.", 3),
+  question("profiles-08", "profiles", "He is 32 years old. Choose the correct question.", ["How old is he?", "What old is he?", "When old is he?", "Who old is he?"], "How old is he?", "How old é a estrutura usada para idade.", "A resposta contém years old.", 3),
+  question("profiles-09", "profiles", "He is from Colombia. Choose the correct question.", ["Where is he from?", "What is he from?", "Why is he from?", "How old is he?"], "Where is he from?", "Where pergunta o país de origem.", "A resposta é um lugar.", 3),
+  question("profiles-10", "profiles", "Which profile sentence is correct?", ["Kyle is Colombian.", "Kyle is Colombia.", "Kyle are Colombian.", "Kyle has Colombian."], "Kyle is Colombian.", "Use o verbo to be antes da nacionalidade.", "Colombian é adjetivo.", 3),
+
+  question("dialogue-01", "dialogue", "Jessie says, “I am happy today.” What did her friend ask?", ["How are you?", "Where are you?", "When are you?", "Who are you?"], "How are you?", "How are you? combina com uma resposta sobre sentimento.", "Happy descreve como Jessie está.", 4),
+  question("dialogue-02", "dialogue", "Jessie answers, “Because I have a date!” What was the question?", ["Why are you happy?", "When are you happy?", "Where are you happy?", "What are you happy?"], "Why are you happy?", "Because responde a uma pergunta com Why.", "Procure a pergunta de motivo.", 4),
+  question("dialogue-03", "dialogue", "“He’s from Colombia, but he lives here.” Which question came before?", ["Where is he from?", "What is his name?", "How old is he?", "When is your date?"], "Where is he from?", "A resposta informa a origem de Kyle.", "Colombia responde a Where.", 4),
+  question("dialogue-04", "dialogue", "“His name is Kyle.” Which question came before?", ["What is his name?", "Where is his name?", "How is his name?", "Why is his name?"], "What is his name?", "What pergunta qual é o nome.", "A resposta fornece Kyle.", 4),
+  question("dialogue-05", "dialogue", "“It’s today, in the evening, at 7 p.m.” Which question came before?", ["When is your date?", "Where is your date?", "Who is your date?", "Why is your date?"], "When is your date?", "When pergunta a data ou o horário.", "7 p.m. indica tempo.", 4),
+  question("dialogue-06", "dialogue", "“It’s Italian food.” Which question came before?", ["What is his favorite type of food?", "Where is his favorite food?", "When is Italian food?", "Who is his favorite food?"], "What is his favorite type of food?", "What pergunta qual é o tipo de comida.", "Italian food é uma preferência.", 4),
+  question("dialogue-07", "dialogue", "Where did Jessie meet Kyle?", ["On Tinder.", "At school.", "At work.", "In Japan."], "Jessie met Kyle on Tinder.", "No diálogo, Jessie diz que conheceu Kyle no Tinder.", "Leia a fala após a pergunta sobre a origem dele.", 4),
+  question("dialogue-08", "dialogue", "Where does Kyle live now?", ["Here, in Jessie’s area.", "In Colombia.", "In Japan.", "In Italy."], "Kyle lives here, in Jessie’s area.", "Kyle é da Colômbia, mas mora perto de Jessie.", "Observe o contraste criado por but.", 4),
+  question("dialogue-09", "dialogue", "What time is the date?", ["At 7 p.m.", "At 7 a.m.", "At noon.", "At midnight."], "The date is at 7 p.m.", "A fala informa o horário diretamente.", "p.m. indica o período da noite.", 4),
+  question("dialogue-10", "dialogue", "Why does Jessie choose that restaurant?", ["It is Kyle’s favorite restaurant.", "It is in Japan.", "It serves breakfast.", "It belongs to her friend."], "It is Kyle’s favorite restaurant.", "O diálogo diz que o encontro será no restaurante favorito dele.", "Procure a razão ligada a favorite restaurant.", 4),
+
+  question("grammar-01", "grammar", "Jessie _____ 26 years old.", ["is", "am", "are", "has"], "Jessie is 26 years old.", "Jessie equivale a she, então usamos is.", "I am; he, she e it usam is.", 2),
+  question("grammar-02", "grammar", "Kyle _____ from Colombia.", ["is", "are", "am", "have"], "Kyle is from Colombia.", "Kyle equivale a he, então usamos is.", "He is from + país.", 3),
+  question("grammar-03", "grammar", "Kyle _____ dark eyes.", ["has", "have", "is", "are"], "Kyle has dark eyes.", "He, she e it usam has.", "Aparência física usa have ou has.", 3),
+  question("grammar-04", "grammar", "Jessie and Kyle _____ talking about a date.", ["are", "is", "am", "has"], "Jessie and Kyle are talking about a date.", "Um sujeito plural usa are.", "Duas pessoas equivalem a they.", 4),
+  question("grammar-05", "grammar", "Choose the correct country and nationality pair.", ["Japan — Japanese", "Japan — Japanish", "Japanese — Japan", "Japan — Japonese"], "Japan — Japanese", "Japan é o país; Japanese é a nacionalidade.", "A nacionalidade aparece depois de she is.", 2),
+  question("grammar-06", "grammar", "Choose the correct country and nationality pair for Kyle.", ["Colombia — Colombian", "Colombia — Colombish", "Colombian — Colombia", "Colombia — Colombia"], "Colombia — Colombian", "Colombia é o país; Colombian é a nacionalidade.", "A palavra da nacionalidade termina em -an.", 3),
+  question("grammar-07", "grammar", "Choose the correct question order.", ["Where is he from?", "Where he is from?", "Is where he from?", "Where from he is?"], "Where is he from?", "Em perguntas com to be, o verbo vem antes do sujeito.", "WH word + is + subject.", 3),
+  question("grammar-08", "grammar", "Choose the correct question order for age.", ["How old is she?", "How she is old?", "Is she how old?", "What old she is?"], "How old is she?", "A estrutura é How old + verbo to be + sujeito.", "Comece com How old.", 2),
+  question("grammar-09", "grammar", "Complete: I _____ happy today.", ["am", "is", "are", "have"], "I am happy today.", "O pronome I usa am.", "Esta é a primeira resposta do diálogo.", 4),
+  question("grammar-10", "grammar", "Complete: I _____ a date tonight.", ["have", "has", "am", "is"], "I have a date tonight.", "I usa have; he e she usam has.", "A fala de Jessie é Because I have a date.", 4),
+];
+

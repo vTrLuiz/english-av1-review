@@ -1,0 +1,12 @@
+{
+  "name": "english-av1-review",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Revisão interativa de inglês A1 para a AV1",
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "check": "node scripts/check-content.mjs"
+  }
+}
+
