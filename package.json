@@ -9,4 +9,3 @@
     "check": "node scripts/check-content.mjs"
   }
 }
-

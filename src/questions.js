@@ -62,4 +62,3 @@ export const QUESTIONS = [
   question("grammar-09", "grammar", "Complete: I _____ happy today.", ["am", "is", "are", "have"], "I am happy today.", "O pronome I usa am.", "Esta é a primeira resposta do diálogo.", 4),
   question("grammar-10", "grammar", "Complete: I _____ a date tonight.", ["have", "has", "am", "is"], "I have a date tonight.", "I usa have; he e she usam has.", "A fala de Jessie é Because I have a date.", 4),
 ];
-

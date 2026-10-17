@@ -137,4 +137,3 @@ export function startApp({ window: browserWindow, document: browserDocument }) {
 }
 
 startApp({ window, document });
-

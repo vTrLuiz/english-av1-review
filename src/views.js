@@ -162,4 +162,3 @@ export function renderScreen(root, viewModel) {
 }
 
 export { escapeHtml, SKILLS };
-
